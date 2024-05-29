@@ -8,10 +8,12 @@
 import SwiftUI
 
 @main
-struct Navigation__Sheets__Alerts__MenusApp: App {
+struct MyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                MainScreenView()
+            }
         }
     }
 }
