@@ -10,10 +10,31 @@ import SwiftUI
 class MainScreenViewModel: ObservableObject {
     @Published var destinations: [Destination] = []
     @Published var path = NavigationPath()
+    @Published var showAlert = false
+    @Published var selectedTip = ""
+    @Published var travelTips = [
+            "Pack light to make your travels easier and more enjoyable.",
+            "Always carry a portable charger to keep your devices powered.",
+            "Learn basic phrases in the local language to enhance your experience.",
+            "Keep copies of important documents like your passport and ID.",
+            "Try local foods to get a taste of the culture.",
+            "Stay hydrated, especially when exploring new cities.",
+            "Use a money belt or hidden pouch to keep your valuables safe.",
+            "Download offline maps to navigate without an internet connection.",
+            "Take lots of photos but also take time to enjoy the moment.",
+            "Be flexible and open to changes in your travel plans."
+        ]
     
     init() {
         loadDestinations()
         print("Init done")
+    }
+    
+    func showRandomTip() {
+        if let tip = travelTips.randomElement() {
+            selectedTip = tip
+            showAlert = true
+        }
     }
     
     private func loadDestinations() {

@@ -34,7 +34,7 @@ struct DestinationDetailScreen: View {
                     }
                 }
                 
-                Text(destination.info)
+                Text("  " + destination.info)
                     .padding(.bottom, 10)
                 
                 VStack {

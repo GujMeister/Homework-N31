@@ -16,10 +16,3 @@ struct Destination: Identifiable, Equatable, Hashable {
     let mustSeePlaces: [String: String]
     let hotels: [String: String]
 }
-
-enum DestinationType: Hashable {
-    case detail(Destination)
-    case transport(String)
-    case mustSeePlaces([String: String])
-    case hotels([String: String])
-}

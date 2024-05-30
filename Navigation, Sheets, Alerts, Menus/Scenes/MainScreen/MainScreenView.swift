@@ -10,16 +10,35 @@ import SwiftUI
 struct MainScreenView: View {
     
     @StateObject var viewModel = MainScreenViewModel()
-//    @Namespace private var animationNamespace
     
     var body: some View {
         NavigationStack(path: $viewModel.path) {
             VStack {
-                Text("Choose Destination")
-                    .frame(maxWidth: .infinity, alignment: .topLeading)
-                    .padding(.horizontal, 20)
-                    .bold()
-                    .font(.system(size: 25))
+                HStack {
+                    Text("Choose Destination")
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                        .bold()
+                        .font(.system(size: 25))
+                    
+                    Button(action: {
+                        viewModel.showRandomTip()
+                    }) {
+                        Text("Travel Tips")
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 25)
+                                    .fill(Color.green)
+                            )
+                            .clipShape(RoundedRectangle(cornerRadius: 25))
+                    }
+                    .alert("Travel Tip", isPresented: $viewModel.showAlert) {
+                        Button("OK", role: .cancel) { }
+                    } message: {
+                        Text(viewModel.selectedTip)
+                    }
+                }
+                .padding(.horizontal, 20)
                 
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack {
@@ -66,37 +85,3 @@ struct MainScreenView: View {
 #Preview {
     MainScreenView()
 }
-
-/*
- ავაწყოთ Travel App
-
-
-
- MainScreenView
- გამოვიყენოთ NavigationStack, რათა ვაჩვენოთ travel destination-ების ლისტი მაგ:ბალი, სან ფრანცისკო, რეიკიავიკი.
- შესაბამის destination-ზე დაჭერისას უნდა გაიხსნას DestinationDetailScreen, NavigationLink-ის გამოყენებით.
- 
- DestinationDetailScreen
- ვაჩვენოთ სურათი/სურათები სადაც გვინდა წასვლა და ზოგადი ინფორმაცია.
- გავაკეთოთ 3 ღილაკი (Transport, Must See, Hotels)
- ამ ღილაკზე დაჭერით გავხსნათ NavigationLink-ით გვერდი, რომელზეც შესაბამისი ინფორმაციები იქნება ამ ქალაქზე.
- 
- 
- 
- NavigationStack
- დაამატეთ Transport, Must See და Hotels-ის გვერდებზე Go to main screen ღილაკი და navigation stack-ის დახმარებით დააბრუნდით MainScreen-ზე.
- 
- 
- 
- Travel Tips
- MainScreen-ზე დაამატეთ ღილაკი Travel Tips-ის, რომელზეც დაჭერისას რანდომად რაღაც სამოგზაუროდ საჭირო Tips შემოგვთავაზებს და ალერტით ვაჩვენებთ.
- 
- დაყავით კოდი მაქსიმალურად (ცალკე ვიუებად და ViewModel-ებად)
-
- დეითა შეგიძლია ხელით დამოკოთ.
- სასურველია რომ API-ები გააკეთოთ და ნეთვორქ ქოლებით ამუშაოთ. ანუ შექმნათ Mock JSON (https://mocki.io).
-
- ასევე კიდევ ერთი Optional შეგიძლიათ გვერდიდან გვერდზე გადასვლა გააკეთოთ სხვადასხვა ანიმაციებით.
-
-  დავალებები ატვირთეთ zip-ის სახით.
- */
