@@ -16,6 +16,7 @@
 		853B90E62C076AF000C74541 /* TransportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853B90E52C076AF000C74541 /* TransportView.swift */; };
 		853B90E82C0797AD00C74541 /* MustSeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853B90E72C0797AD00C74541 /* MustSeeView.swift */; };
 		853B90EA2C079A2C00C74541 /* HotelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853B90E92C079A2C00C74541 /* HotelsView.swift */; };
+		854862A12C07F70A009CFC0A /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854862A02C07F70A009CFC0A /* MainScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		853B90E52C076AF000C74541 /* TransportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportView.swift; sourceTree = "<group>"; };
 		853B90E72C0797AD00C74541 /* MustSeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MustSeeView.swift; sourceTree = "<group>"; };
 		853B90E92C079A2C00C74541 /* HotelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsView.swift; sourceTree = "<group>"; };
+		854862A02C07F70A009CFC0A /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,12 +63,10 @@
 		853B90CE2C0665F600C74541 /* Navigation, Sheets, Alerts, Menus */ = {
 			isa = PBXGroup;
 			children = (
-				853B90CF2C0665F600C74541 /* Navigation__Sheets__Alerts__MenusApp.swift */,
-				853B90D12C0665F600C74541 /* MainScreenView.swift */,
-				853B90E22C07645500C74541 /* DestinationDetailScreen.swift */,
-				853B90E42C076ADB00C74541 /* InfoViews */,
+				854862A52C07F8E5009CFC0A /* App */,
+				854862A22C07F85D009CFC0A /* Scenes */,
 				853B90DF2C075DA400C74541 /* Model */,
-				853B90D32C0665F800C74541 /* Assets.xcassets */,
+				854862A62C07F917009CFC0A /* Assets */,
 				853B90D52C0665F800C74541 /* Preview Content */,
 			);
 			path = "Navigation, Sheets, Alerts, Menus";
@@ -96,6 +96,49 @@
 				853B90E92C079A2C00C74541 /* HotelsView.swift */,
 			);
 			path = InfoViews;
+			sourceTree = "<group>";
+		};
+		854862A22C07F85D009CFC0A /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				854862A32C07F864009CFC0A /* MainScreen */,
+				854862A42C07F8A9009CFC0A /* DestinationDetail */,
+				853B90E42C076ADB00C74541 /* InfoViews */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		854862A32C07F864009CFC0A /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				853B90D12C0665F600C74541 /* MainScreenView.swift */,
+				854862A02C07F70A009CFC0A /* MainScreenViewModel.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		854862A42C07F8A9009CFC0A /* DestinationDetail */ = {
+			isa = PBXGroup;
+			children = (
+				853B90E22C07645500C74541 /* DestinationDetailScreen.swift */,
+			);
+			path = DestinationDetail;
+			sourceTree = "<group>";
+		};
+		854862A52C07F8E5009CFC0A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				853B90CF2C0665F600C74541 /* Navigation__Sheets__Alerts__MenusApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		854862A62C07F917009CFC0A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				853B90D32C0665F800C74541 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +216,7 @@
 				853B90E32C07645500C74541 /* DestinationDetailScreen.swift in Sources */,
 				853B90EA2C079A2C00C74541 /* HotelsView.swift in Sources */,
 				853B90E12C075DB800C74541 /* HotelModel:Info.swift in Sources */,
+				854862A12C07F70A009CFC0A /* MainScreenViewModel.swift in Sources */,
 				853B90D02C0665F600C74541 /* Navigation__Sheets__Alerts__MenusApp.swift in Sources */,
 				853B90E82C0797AD00C74541 /* MustSeeView.swift in Sources */,
 			);
